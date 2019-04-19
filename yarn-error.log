@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/local/Cellar/node@8/8.15.0/bin/node /usr/local/opt/node@8/bin/yarn add gulp-less
+
+PATH: 
+  ~/.composer/vendor/bin:/usr/local/opt/node@8/bin:/Users/Q/Downloads/phantomjs-2.1.1-macosx/bin:/usr/local/opt/python/libexec/bin:/Users/Q/Downloads/phantomjs-2.1.1-macosx/bin:/data/Work/spring-1.4.1.RELEASE/bin:/data/Work/apache-maven-3.3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/Q/.composer/vendor/bin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  8.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /github.com/xy-tools/xy/packages/library/package.json: Unexpected token } in JSON at position 600
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/node@8/8.15.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/node@8/8.15.0/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /usr/local/Cellar/node@8/8.15.0/lib/node_modules/yarn/lib/cli.js:315:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "@xy/library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+      "wubaiqing <wubaiqing@vip.qq.com> (https://github.com/wubaiqing)"
+    ],
+    "typings": "./index.d.ts",
+    "main": "lib/index.js",
+    "bin": {
+      "xy-lib": "./bin/library.js"
+    },
+    "files": [
+      "bin",
+      "lib",
+      "src"
+    ],
+    "scripts": {
+      "build": "umi-tools build"
+    },
+    "dependencies": {
+      "ajv": "^6.10.0",
+      "chalk": "^2.4.2",
+      "signale": "^1.4.0",
+      "yargs-parser": "^13.0.0",
+      "gulp": "^4.0.0",
+      "gulp-autoprefixer": "^6.0.0",
+      "gulp-cssmin": "^0.2.0",
+      "gulp-sass": "^4.0.2",
+    },
+    "devDependencies": {
+      "umi-tools": "^0.4.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
