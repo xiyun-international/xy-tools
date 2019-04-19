@@ -5,7 +5,7 @@ import { join } from 'path';
  * 检测文件是否存在
  * @param object
  */
-export default function getExistFile({ cwd, files }) {
+export function getExistFile({ cwd, files }) {
   for (const file of files) {
     const absFilePath = join(cwd, file);
     if (existsSync(absFilePath)) {
