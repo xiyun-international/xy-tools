@@ -32,7 +32,8 @@ export async function build(dir, opts: IOpts) {
   if (!existsSync(packagesDir)) {
     return;
   }
-  const service = new Service(pkgPath);
+  const service = new Service( pkgPath );
+
   service.run(
     "build",
     {

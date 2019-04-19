@@ -4,7 +4,7 @@ import sass from "gulp-sass";
 import cssmin from "gulp-cssmin";
 import autoprefixer from "gulp-autoprefixer";
 
-import { IOutputOpts } from "./types";
+import { IOutputOpts } from "../types";
 
 export async function buildCss(type: String, outputOpts: IOutputOpts) {
   gulp.task(type, () => {

@@ -18,7 +18,7 @@ export default function ({ cwd }) {
 
   if (existsSync(configFile)) {
     return testDefault(require(configFile));
-  } else {
+  } 
     return {};
-  }
+  
 }
