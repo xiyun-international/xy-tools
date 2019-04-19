@@ -1,5 +1,10 @@
 import gulp from "gulp";
+import less from "gulp-less";
+import sass from "gulp-sass";
 import signale from "signale";
+import cssmin from "gulp-cssmin";
+import autoprefixer from "gulp-autoprefixer";
+
 
 import { join } from "path";
 import { IOpts } from "./types";

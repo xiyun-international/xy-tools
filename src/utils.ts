@@ -15,11 +15,3 @@ export function getExistFile({ cwd, files }) {
     }
   }
 }
-
-export function getProjectPath(...filePath) {
-  return join(cwd, ...filePath);
-}
-
-export function resolve(moduleName) {
-  return require.resolve(moduleName);
-}
