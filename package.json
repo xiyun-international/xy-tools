@@ -17,8 +17,7 @@
     "build": "umi-tools build",
     "watch": "umi-tools build --watch",
     "lint" : "vue-cli-service lint --mode production",
-    "prettier" : "prettier --write",
-    "bar": "echo \"bar\" && exit 0"
+    "prettier" : "echo \"bar\""
   },
   "dependencies": {
     "@vue/cli-service": "^3.6.0",
@@ -40,6 +39,6 @@
     "typescript": ">=2.2.1"
   },
   "pre-commit": [
-    "bar"
+    "prettier"
   ]
 }
