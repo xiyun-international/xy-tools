@@ -1,2 +1,14 @@
-# 禧云库
-用于各工具项目打包成 lib
+# xy-tools
+
+The tools used to build xy.
+
+## Usage
+
+```bash
+$ xy-tools theme
+$ xy-tools component
+```
+
+## LICENSE
+
+MIT
