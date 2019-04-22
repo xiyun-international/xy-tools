@@ -2,6 +2,7 @@ import Service from "@vue/cli-service";
 
 import { join } from "path";
 import { IOpts } from "./types";
+import { isLerna } from "./utils";
 import { existsSync, readdirSync } from "fs";
 
 export default async function(opts: IOpts) {
@@ -12,11 +13,9 @@ export default async function(opts: IOpts) {
     dirs.forEach(pkg => {
       build(`./packages/${pkg}`, { cwd })
     });
+  } else {
+      build("./", { cwd })
   }
-}
-
-function isLerna(cwd) {
-  return existsSync(join(cwd, "lerna.json"));
 }
 
 export async function build(dir, opts: IOpts) {

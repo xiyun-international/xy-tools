@@ -1,5 +1,5 @@
 {
-  "name": "xy-tools",
+  "name": "@xiyun/tools",
   "version": "1.0.0",
   "description": "tools for xiyun international",
   "license": "MIT",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@vue/cli-service": "^3.6.0",
+    "assert": "^1.4.1",
     "chalk": "^2.4.2",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
@@ -26,6 +27,7 @@
     "gulp-less": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "signale": "^1.4.0",
+    "update-notifier": "^2.5.0",
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
@@ -43,6 +45,5 @@
   "peerDependencies": {
     "typescript": ">=2.2.1"
   },
-  "pre-commit": [
-  ]
+  "pre-commit": []
 }
