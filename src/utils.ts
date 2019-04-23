@@ -1,6 +1,10 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
 
+/**
+ * 是否是 Lerna 项目
+ * @param cwd
+ */
 export function isLerna(cwd: any) {
   return existsSync(join(cwd, "lerna.json"));
 }
