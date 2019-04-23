@@ -3,7 +3,6 @@ import less from "gulp-less";
 import sass from "gulp-sass";
 import cssmin from "gulp-cssmin";
 import autoprefixer from "gulp-autoprefixer";
-
 import signale from "signale";
 
 import { join } from "path";
@@ -50,7 +49,7 @@ export async function build(type: String, outputOpts: IOutputOpts) {
     gulp
       .src(`${themeDir}/styles/index.${type}`)
       .pipe(type === "scss" ? sass().on("error", sass.logError) : less())
-      .pipe( autoprefixer({
+      .pipe(autoprefixer({
           browsers: ["ie > 9", "last 2 versions"],
           cascade: false
         })
