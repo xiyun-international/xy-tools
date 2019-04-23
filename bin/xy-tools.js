@@ -16,7 +16,6 @@ const updater = require('update-notifier');
 const pkg = require('../package.json');
 updater({ pkg }).notify({ defer: true });
 
-// 检测类型
 const cwd = process.cwd();
 
 switch (args._[0]) {
@@ -29,27 +28,6 @@ switch (args._[0]) {
   default:
     console.error(chalk.red(`Unsupported command ${args._[0]}`));
     process.exit(1);
-
-
-  // case 'theme':
-  //   require('../lib/gulp').default({
-  //     cwd,
-  //   }).catch(e => {
-  //     signale.error(e);
-  //     process.exit(1);
-  //   });
-  //   break;
-  // case 'component':
-  //   require('../lib/components').default({
-  //     cwd,
-  //   }).catch(e => {
-  //     signale.error(e);
-  //     process.exit(1);
-  //   });
-  //   break;
-  // default:
-  //   signale.error(chalk.red(`Unsupported command ${args._[0]}`))
-  //   break;
 }
 
 async function build() {

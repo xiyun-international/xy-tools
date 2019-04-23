@@ -1,6 +1,6 @@
 export interface IOpts {
   cwd: string;
-  args?: Object;
+  cmd?: string;
 }
 
 export interface IOutputOpts {

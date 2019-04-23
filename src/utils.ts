@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-export function isLerna(cwd: string) {
+export function isLerna(cwd: any) {
   return existsSync(join(cwd, "lerna.json"));
 }
 
