@@ -17,8 +17,7 @@
     "pub": "np --no-cleanup --yolo --no-publish",
     "build": "umi-tools build",
     "watch": "umi-tools build --watch",
-    "lint": "eslint --ext .ts src",
-    "precommit": "lint-staged"
+    "lint": "eslint --ext .ts src"
   },
   "lint-staged": {
     "*.(t|j)s": [
