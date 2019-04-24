@@ -6,7 +6,7 @@ import { join } from 'path';
  * @param cwd
  */
 export function isLerna(cwd: any) {
-  return existsSync(join(cwd, "lerna.json"));
+  return existsSync(join(cwd, 'lerna.json'));
 }
 
 /**

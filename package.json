@@ -14,15 +14,15 @@
     "xy-tools": "./bin/xy-tools.js"
   },
   "scripts": {
+    "pub": "np --no-cleanup --yolo --no-publish",
     "build": "umi-tools build",
     "watch": "umi-tools build --watch",
-    "lint": "tslint src/**/*.ts",
+    "lint": "eslint --ext .ts src",
     "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.(t|j)s": [
       "prettier --write",
-      "vue-cli-service lint --mode production",
       "git add"
     ]
   },
@@ -41,12 +41,10 @@
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
     "lint-staged": "^8.1.5",
     "np": "^5.0.0",
-    "tslint": "^5.11.0",
     "umi-tools": "^0.4.0"
-  },
-  "peerDependencies": {
-    "typescript": ">=2.2.1"
   }
 }
