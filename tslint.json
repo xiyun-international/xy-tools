@@ -1,4 +1,15 @@
 {
-  "extends": [],
-  "rules": {}
+  "extends": "tslint:recommended",
+  "rulesDirectory": ["src"],
+  "rules": {
+    "max-line-length": {
+      "options": [120]
+    },
+    "object-literal-sort-keys": false
+  },
+  "jsRules": {
+    "max-line-length": {
+        "options": [120]
+    }
+  }
 }

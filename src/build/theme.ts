@@ -1,35 +1,35 @@
-import gulp from 'gulp';
-import less from 'gulp-less';
-import sass from 'gulp-sass';
-import cssmin from 'gulp-cssmin';
-import autoprefixer from 'gulp-autoprefixer';
-import signale from 'signale';
+import gulp from "gulp";
+import autoprefixer from "gulp-autoprefixer";
+import cssmin from "gulp-cssmin";
+import less from "gulp-less";
+import sass from "gulp-sass";
+import signale from "signale";
 
-import { join } from 'path';
-import { IOpts } from '../types';
-import { IOutputOpts } from '../types';
-import { existsSync, readdirSync } from 'fs';
+import { existsSync, readdirSync } from "fs";
+import { join } from "path";
+import { IOpts } from "../types";
+import { IOutputOpts } from "../types";
 
 export default async function(dir: any, opts: IOpts) {
   const { cwd } = opts;
   const pkgPath = join(cwd, dir);
 
-  const libDir = join(pkgPath, 'lib');
-  const themeDir = join(pkgPath, 'theme');
+  const libDir = join(pkgPath, "lib");
+  const themeDir = join(pkgPath, "theme");
 
   // 编译 Gulp
   if (existsSync(themeDir)) {
     // Todo: 改造成 .xy.library.js
-    const type = themeDir.indexOf('element-ui') === -1 ? 'less' : 'scss';
+    const type = themeDir.indexOf("element-ui") === -1 ? "less" : "scss";
 
     await addGulpTask(type, {
-      themeDir,
       libDir,
+      themeDir,
     });
 
     const taskInstance = gulp.task(type);
     if (taskInstance === undefined) {
-      signale.error('Task not found!');
+      signale.error("Task not found!");
       return;
     }
 
@@ -42,16 +42,16 @@ export default async function(dir: any, opts: IOpts) {
   }
 }
 
-async function addGulpTask(type: String, outputOpts: IOutputOpts) {
+async function addGulpTask(type: string, outputOpts: IOutputOpts) {
   gulp.task(type, () => {
-    const { themeDir, libDir } = outputOpts;
+    const { libDir, themeDir } = outputOpts;
     // SASS、Less
     gulp
       .src(`${themeDir}/styles/index.${type}`)
-      .pipe(type === 'scss' ? sass().on('error', sass.logError) : less())
+      .pipe(type === "scss" ? sass().on("error", sass.logError) : less())
       .pipe(
         autoprefixer({
-          browsers: ['ie > 9', 'last 2 versions'],
+          browsers: ["ie > 9", "last 2 versions"],
           cascade: false,
         })
       )
