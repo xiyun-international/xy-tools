@@ -22,6 +22,7 @@
   "lint-staged": {
     "*.(t|j)s": [
       "prettier --write",
+      "tslint -p . -c tslint.json",
       "git add"
     ]
   },
