@@ -22,7 +22,7 @@ export default async function(dir: any, opts: IOpts) {
     // Todo: 改造成 .xy.library.js
     const type = themeDir.indexOf('element-ui') === -1 ? 'less' : 'scss';
 
-    build(type, {
+    addGulpTask(type, {
       themeDir,
       libDir,
     });
@@ -42,7 +42,7 @@ export default async function(dir: any, opts: IOpts) {
   }
 }
 
-export async function build(type: String, outputOpts: IOutputOpts) {
+export async function addGulpTask(type: String, outputOpts: IOutputOpts) {
   gulp.task(type, () => {
     const { themeDir, libDir } = outputOpts;
     // SASS、Less

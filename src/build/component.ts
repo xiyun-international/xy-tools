@@ -1,4 +1,4 @@
-import Service from '@vue/cli-service';
+import Service from '@vue/cli-service/lib/Service';
 
 import { join } from 'path';
 import { IOpts } from '../types';
