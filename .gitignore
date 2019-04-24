@@ -18,11 +18,8 @@ Thumbs.db
 *.swo
 *.pyc
 *.pyo
-.build
 node_modules
 .cache
 lib
-tests/*.css
 package-lock.json
 .vscode
-
