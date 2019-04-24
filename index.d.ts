@@ -1,3 +1,3 @@
-import { IOpts } from './src/types';
+import { IOpts } from "./src/types";
 
 export function build(opts: IOpts): Promise<any>;
