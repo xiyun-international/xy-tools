@@ -12,11 +12,11 @@ export default async function(opts: IOpts) {
   const build = cmd === 'theme' ? buildTheme : buildComponent;
 
   if (isLerna(cwd)) {
-    const dirs = readdirSync(join(cwd, 'packages'));
-    dirs.forEach(pkg => {
-      build(`./packages/${pkg}`, { cwd });
-    });
+    const pkgs = readdirSync(join(cwd, 'packages'));
+    for (const pkg of pkgs) {
+      await build(`./packages/${pkg}`, { cwd });
+    }
   } else {
-    build('./', { cwd });
+    await build('./', { cwd });
   }
 }
