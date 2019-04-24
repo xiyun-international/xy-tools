@@ -5,8 +5,7 @@
     "max-line-length": {
       "options": [120]
     },
-    "object-literal-sort-keys": false,
-    "object-literal-key-quotes": false
+    "object-literal-sort-keys": false
   },
   "jsRules": {
     "max-line-length": {

@@ -1,6 +1,7 @@
 {
   "trailingComma": "es5",
   "printWidth": 120,
+  "quoteProps": "consistent",
   "overrides": [
     {
       "files": ".prettierrc",
