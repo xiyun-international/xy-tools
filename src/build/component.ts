@@ -4,7 +4,7 @@ import { existsSync } from "fs";
 import { join } from "path";
 import { IOpts } from "../types";
 
-export default async function build(dir, opts: IOpts) {
+export default async function build(dir: string, opts: IOpts) {
   const { cwd } = opts;
   const pkgPath = join(cwd, dir);
 

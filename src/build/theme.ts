@@ -10,7 +10,7 @@ import { join } from "path";
 import { IOpts } from "../types";
 import { IOutputOpts } from "../types";
 
-export default async function(dir: any, opts: IOpts) {
+export default async function(dir: string, opts: IOpts) {
   const { cwd } = opts;
   const pkgPath = join(cwd, dir);
 
@@ -49,12 +49,7 @@ async function addGulpTask(type: string, outputOpts: IOutputOpts) {
     gulp
       .src(`${themeDir}/styles/index.${type}`)
       .pipe(type === "scss" ? sass().on("error", sass.logError) : less())
-      .pipe(
-        autoprefixer({
-          browsers: ["ie > 9", "last 2 versions"],
-          cascade: false,
-        })
-      )
+      .pipe(autoprefixer({ browsers: ["ie > 9", "last 2 versions"], cascade: false }))
       .pipe(cssmin())
       .pipe(gulp.dest(libDir));
 
