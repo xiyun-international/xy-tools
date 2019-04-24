@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "*.(t|j)s": [
-      "prettier --write",
+      "prettier --config .prettierrc --write",
       "tslint -p . -c tslint.json",
       "git add"
     ]
