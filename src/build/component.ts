@@ -19,17 +19,13 @@ export default async function build(dir: string, opts: IOpts) {
   const service = new Service(pkgPath);
   service.run("build", {
     _: ["build", packagesEntry],
-    modern: false,
-    report: false,
-    "report-json": false,
-    watch: false,
-    open: false,
-    copy: false,
-    https: false,
-    verbose: false,
-    clean: false,
+    // 文件名
+    name: "index",
+    // 输出目录
     dest: libDir,
+    // 输出格式是 lib 模式
     target: "lib",
+    // umd
     formats: "umd-min",
   });
 }

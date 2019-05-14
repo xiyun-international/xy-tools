@@ -37,6 +37,7 @@
     "gulp-sass": "^4.0.2",
     "signale": "^1.4.0",
     "update-notifier": "^2.5.0",
+    "vue-template-compiler": "^2.6.10",
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
