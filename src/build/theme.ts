@@ -45,7 +45,7 @@ export default async function(dir: string, opts: IOpts) {
 async function addGulpTask(type: string, outputOpts: IOutputOpts) {
   gulp.task(type, () => {
     const { libDir, themeDir } = outputOpts;
-    // SASS、Less
+
     gulp
       .src(`${themeDir}/styles/index.${type}`)
       .pipe(type === "scss" ? sass().on("error", sass.logError) : less())
@@ -53,7 +53,6 @@ async function addGulpTask(type: string, outputOpts: IOutputOpts) {
       .pipe(cssmin())
       .pipe(gulp.dest(libDir));
 
-    // Font
     gulp.src(`${themeDir}/fonts/xy.*`).pipe(gulp.dest(`${libDir}/fonts/`));
   });
 }
