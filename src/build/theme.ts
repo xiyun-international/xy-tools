@@ -20,7 +20,7 @@ export default async function(dir: string, opts: IOpts) {
   // 编译 Gulp
   if (existsSync(themeDir)) {
     // Todo: 改造成 .xy.library.js
-    const type = themeDir.indexOf("element-ui") === -1 ? "less" : "scss";
+    const type = "less";
 
     await addGulpTask(type, {
       libDir,
