@@ -16,7 +16,16 @@ export default async function build(dir: string, opts: IOpts) {
     return;
   }
 
-  const service = new Service(pkgPath);
+  const service = new Service(pkgPath, {
+    // CSS
+    inlineOptions: {
+      productionSourceMap: false,
+      css: {
+        extract: false,
+      },
+    },
+  });
+
   service.run("build", {
     _: ["build", packagesEntry],
     // 文件名
@@ -27,5 +36,8 @@ export default async function build(dir: string, opts: IOpts) {
     target: "lib",
     // umd
     formats: "umd-min",
+
+    // no-clean
+    clean: false,
   });
 }
