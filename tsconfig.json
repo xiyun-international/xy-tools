@@ -1,8 +1,11 @@
-
 {
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.js"
+  ]
 }
