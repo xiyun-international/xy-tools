@@ -14,8 +14,8 @@
     "xy-tools": "./bin/xy-tools.js"
   },
   "scripts": {
-    "build": "umi-tools build",
-    "watch": "umi-tools build --watch",
+    "ts:build": "umi-tools build",
+    "ts:watch": "umi-tools build --watch",
     "pub": "np --no-cleanup --yolo --no-publish"
   },
   "lint-staged": {
