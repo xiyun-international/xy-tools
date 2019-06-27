@@ -35,7 +35,7 @@
     "signale": "^1.4.0",
     "update-notifier": "^2.5.0",
     "vue-template-compiler": "^2.6.10",
-    "vuepress": "^1.0.0-alpha.48",
+    "vuepress": "^1.0.0-rc.1",
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {

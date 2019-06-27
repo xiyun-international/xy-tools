@@ -1,20 +1,13 @@
-import { build, dev } from "@vuepress/core";
-import { join } from "path";
-import signale from "signale";
+import { fork } from "child_process";
 import { IOpts } from "./types";
 
 export default async function(opts: IOpts) {
   const { cwd, cmd } = opts;
-  const sourceDir = join(cwd, "docs");
 
-  switch (cmd) {
-    case "dev":
-      dev({ sourceDir, theme: "@vuepress/default" });
-      break;
-    case "build":
-      build({ sourceDir, theme: "@vuepress/default" });
-      break;
-    default:
-      signale.error("Task not found!");
+  const binPath = require.resolve("vuepress/cli.js");
+  if (cmd === "dev") {
+    fork(binPath, ["dev", "docs"]);
+  } else if (cmd === "build") {
+    fork(binPath, ["docs", "build"]);
   }
 }
