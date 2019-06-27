@@ -16,13 +16,11 @@
   "scripts": {
     "build": "umi-tools build",
     "watch": "umi-tools build --watch",
-    "lint": "tslint -p . -c tslint.json",
     "pub": "np --no-cleanup --yolo --no-publish"
   },
   "lint-staged": {
     "*.(t|j)s": [
       "prettier --config .prettierrc --write",
-      "tslint -p . -c tslint.json",
       "git add"
     ]
   },

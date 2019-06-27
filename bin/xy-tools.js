@@ -35,12 +35,13 @@ switch (args._[0]) {
 
 async function build() {
   const cmd = args._[1];
-  assert.ok(["theme", "component"].includes(cmd), `Invalid subCommand ${cmd}`);
+  assert.ok(["theme", "component", "typescript"].includes(cmd), `Invalid subCommand ${cmd}`);
 
   require("../lib/build")
     .default({
       cwd,
       cmd,
+      args,
     })
     .catch(e => {
       signale.error(e);
