@@ -1,16 +1,16 @@
 {
-  "extends": "tslint:recommended",
-  "rulesDirectory": ["src"],
-  "rules": {
-    "max-line-length": {
-      "options": [120]
-    },
-    "object-literal-sort-keys": false,
-    "object-literal-key-quotes": false
-  },
-  "jsRules": {
-    "max-line-length": {
-        "options": [120]
-    }
-  }
+  // "extends": "tslint:recommended",
+  // "rulesDirectory": ["src"],
+  // "rules": {
+  //   "max-line-length": {
+  //     "options": [120]
+  //   },
+  //   "object-literal-sort-keys": false,
+  //   "object-literal-key-quotes": false
+  // },
+  // "jsRules": {
+  //   "max-line-length": {
+  //       "options": [120]
+  //   }
+  // }
 }

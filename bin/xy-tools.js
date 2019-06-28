@@ -10,7 +10,6 @@ if (args.v || args.version) {
   console.log(require("./package").version);
   process.exit(0);
 }
-
 // https://www.npmjs.com/package/update-notifier
 const updater = require("update-notifier");
 const pkg = require("../package.json");
@@ -24,6 +23,9 @@ switch (args._[0]) {
     break;
   case "docs":
     docs();
+    break;
+  case "test":
+    test();
     break;
   case undefined:
     help();
@@ -70,4 +72,18 @@ function help() {
     ${chalk.green("build theme")}       build theme
     ${chalk.green("build component")}   build component
   `);
+}
+
+async function test() {
+  const cmd = yParser(process.argv.slice(3));
+  console.log(cmd);
+  require("../lib/jest")
+    .default({
+      cwd,
+      cmd,
+    })
+    .catch(e => {
+      signale.error(e);
+      process.exit(1);
+    });
 }
