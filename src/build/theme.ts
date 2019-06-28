@@ -2,7 +2,6 @@ import gulp from "gulp";
 import autoprefixer from "gulp-autoprefixer";
 import cssmin from "gulp-cssmin";
 import less from "gulp-less";
-import sass from "gulp-sass";
 import signale from "signale";
 
 import { existsSync, readdirSync } from "fs";
@@ -48,7 +47,7 @@ async function addGulpTask(type: string, outputOpts: IOutputOpts) {
 
     gulp
       .src(`${themeDir}/styles/index.${type}`)
-      .pipe(type === "scss" ? sass().on("error", sass.logError) : less())
+      .pipe(less())
       .pipe(autoprefixer({ browsers: ["ie > 9", "last 2 versions"], cascade: false }))
       .pipe(cssmin())
       .pipe(gulp.dest(libDir));
