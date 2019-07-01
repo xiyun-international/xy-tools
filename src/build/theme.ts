@@ -48,7 +48,7 @@ async function addGulpTask(type: string, outputOpts: IOutputOpts) {
     gulp
       .src(`${themeDir}/styles/index.${type}`)
       .pipe(less())
-      .pipe(autoprefixer({ browsers: ["ie > 9", "last 2 versions"], cascade: false }))
+      .pipe(autoprefixer({ overrideBrowserslist: ["ie > 9", "last 2 versions"], cascade: false }))
       .pipe(cssmin())
       .pipe(gulp.dest(libDir));
 

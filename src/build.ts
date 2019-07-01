@@ -23,14 +23,12 @@ export default async function(opts: IOpts) {
       break;
   }
 
-  if (isLerna(cwd)) {
-    if (cmd === "typescript") {
-      await build({ cwd, args });
-    } else {
-      const pkgs = readdirSync(join(cwd, "packages"));
-      for (const pkg of pkgs) {
-        await build(`./packages/${pkg}`, { cwd });
-      }
+  if (cmd === "typescript") {
+    await build({ cwd, args });
+  } else if (isLerna(cwd)) {
+    const pkgs = readdirSync(join(cwd, "packages"));
+    for (const pkg of pkgs) {
+      await build(`./packages/${pkg}`, { cwd });
     }
   } else {
     await build("./", { cwd });
