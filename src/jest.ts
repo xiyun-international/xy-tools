@@ -37,25 +37,27 @@ const config = _objectSpread({
   testPathIgnorePatterns: ["/node_modules/"],
 });
 export default async function(opts: IOpts) {
-  const { cwd, cmd } = opts; ///Users/yue.yu/Documents/xiyun/xy component
+  const { cwd, cmd } = opts;
   if (isLerna(cwd)) {
     const pkgs = readdirSync(join(cwd, "packages"));
     const single = cmd["_"][0];
     if (single) {
       await run(single, cmd);
     } else {
-      for (const pkg of pkgs) {
-        await run(pkg, cmd);
-      }
+      await run("all", cmd);
     }
   }
 }
 async function run(pkg, cmd) {
-  console.log(pkg);
+  let pkgUrl = "";
+  if (pkg === "all") {
+    pkgUrl = "./packages";
+  } else {
+    pkgUrl = `./packages/${pkg}`;
+  }
   new Promise((resolve, reject) => {
     jest
       .runCLI(
-        //options, options["projects"]
         _objectSpread({
           config: JSON.stringify(config),
           ...cmd,
@@ -63,7 +65,7 @@ async function run(pkg, cmd) {
           colors: true,
           //   runInBand: true,
         }),
-        [`./packages/${pkg}`]
+        [pkgUrl]
       )
       .then(result => {
         const results = result.results;

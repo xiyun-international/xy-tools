@@ -1,6 +1,6 @@
 {
-  "name": "xy-tools",
-  "version": "0.0.8",
+  "name": "@xiyun/xy-tools",
+  "version": "0.0.10",
   "description": "tools for xiyun international",
   "license": "MIT",
   "keywords": [
@@ -14,15 +14,13 @@
     "xy-tools": "./bin/xy-tools.js"
   },
   "scripts": {
-    "build": "umi-tools build",
-    "watch": "umi-tools build --watch",
-    "lint": "tslint -p . -c tslint.json",
+    "ts:build": "umi-tools build",
+    "ts:watch": "umi-tools build --watch",
     "pub": "np --no-cleanup --yolo --no-publish"
   },
   "lint-staged": {
     "*.(t|j)s": [
       "prettier --config .prettierrc --write",
-      "tslint -p . -c tslint.json",
       "git add"
     ]
   },
@@ -38,7 +36,7 @@
     "signale": "^1.4.0",
     "update-notifier": "^2.5.0",
     "vue-template-compiler": "^2.6.10",
-    "vuepress": "^1.0.0-alpha.48",
+    "vuepress": "^1.0.0-rc.1",
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {

@@ -37,12 +37,13 @@ switch (args._[0]) {
 
 async function build() {
   const cmd = args._[1];
-  assert.ok(["theme", "component"].includes(cmd), `Invalid subCommand ${cmd}`);
+  assert.ok(["theme", "component", "typescript"].includes(cmd), `Invalid subCommand ${cmd}`);
 
   require("../lib/build")
     .default({
       cwd,
       cmd,
+      args,
     })
     .catch(e => {
       signale.error(e);
@@ -76,7 +77,6 @@ function help() {
 
 async function test() {
   const cmd = yParser(process.argv.slice(3));
-  console.log(cmd);
   require("../lib/jest")
     .default({
       cwd,
