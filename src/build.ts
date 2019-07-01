@@ -14,10 +14,13 @@ export default async function(opts: IOpts) {
   switch (cmd) {
     case "theme":
       build = buildTheme;
+      break;
     case "component":
       build = buildComponent;
+      break;
     case "typescript":
       build = buildTypeScript;
+      break;
   }
 
   if (isLerna(cwd)) {
