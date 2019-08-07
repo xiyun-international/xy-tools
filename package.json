@@ -34,6 +34,7 @@
     "gulp-less": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "signale": "^1.4.0",
+    "ts-jest": "^24.0.2",
     "update-notifier": "^2.5.0",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.0.0-rc.1",
@@ -44,7 +45,6 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^8.1.5",
     "np": "^5.0.0",
-    "ts-jest": "^24.0.2",
     "ts-lint": "^4.5.1",
     "typescript": "^3.4.5",
     "umi-tools": "^0.4.0"
